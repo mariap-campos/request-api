@@ -1,7 +1,7 @@
 
 # Github Api
 
-
+![interface gif](readme/interface.gif)
 
 This is a simple excercise on **api consumption** using [axios](https://github.com/axios/axios) - A Promise based HTTP client for the browser and node.js.
 
