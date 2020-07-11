@@ -1,6 +1,7 @@
 var gitUser = document.getElementById('user');
 var dataList = document.querySelector('ul');
-var placeImg = document.querySelector('.img')
+var placeImg = document.querySelector('.avatar-img')
+var placeBio = document.querySelector('.avatar-bio')
 var gitAvatar;
 var gitBio;
 
@@ -58,12 +59,13 @@ const fillList = repositorios => {
     console.log("Repositórios", repositorios);
     dataList.innerHTML = "Repositórios:";
 
-    const userbio = document.createTextNode(gitBio);
     const userimg = document.createElement('img');
-    userimg.setAttribute('src',gitAvatar)
-
+    userimg.setAttribute('src',gitAvatar);
     placeImg.appendChild(userimg);
-    placeImg.appendChild(userbio);
+
+
+    const userbio = document.createTextNode(gitBio);
+    placeBio.appendChild(userbio);
 
     for (repo of repositorios){
         const reponame = document.createTextNode(repo.name);
