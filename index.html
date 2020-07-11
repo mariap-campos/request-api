@@ -7,17 +7,23 @@
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="js/app.js" async defer></script>
         <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
 
     </head>
     <body>     
         <div class="container">
-            <div class="avatar-img"></div>
+            <h1>Search Git Users</h1>
+            <span class="avatar-img"></span>
             <div class="avatar-bio"></div>
 
             <div class="repos">
+                <h3> Repos:</h3>
                 <ul></ul>
-                <input type="text" name="user" id="user">
-                <button onclick="getUser()">Pesquisar</button> 
+            </div>
+
+            <div class="search">              
+            <input type="text" name="user" id="user">
+            <button onclick="getUser()">Search</button> 
             </div>
         </div>
     </body>

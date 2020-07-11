@@ -6,6 +6,9 @@ var gitAvatar;
 var gitBio;
 
 const getUser = function(name){
+    dataList.innerHTML = "";
+    placeImg.innerHTML = "";
+    placeBio.innerHTML = "";
     var user = gitUser.value;
     if (!user){
         renderError();
@@ -52,10 +55,12 @@ function renderLoading(loading){
 
 const fillList = repositorios => {
     console.log("Repositórios", repositorios);
-    dataList.innerHTML = "Repositórios:";
+    dataList.innerHTML = "";
 
     const userimg = document.createElement('img');
+    userimg.setAttribute('src',gitAvatar);
     placeImg.appendChild(userimg);
+
     const userbio = document.createTextNode(gitBio);
     placeBio.appendChild(userbio);
 
