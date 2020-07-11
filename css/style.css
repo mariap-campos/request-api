@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Helvetica Neue, Arial;
+    font-size: 18px;
+}
+
+.container {
+    width: 80%;
+    margin: 80px auto 0 auto;
+    background-color: aqua;
+}
+
+img{
+    width: 200px;
+    border-radius: 100px;
+    border: solid brown 4px;
+    
+}
+
+.avatar-img{
+    background-color: brown;
+}

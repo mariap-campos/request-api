@@ -6,12 +6,14 @@ var gitAvatar;
 var gitBio;
 
 const getUser = function(name){
+    dataList.innerHTML = "";
+    placeImg.innerHTML = "";
+    placeBio.innerHTML = "";
     var user = gitUser.value;
     if (!user){
         renderError();
-        alert("Preencha o campo de usuário!");
     }
-    renderLoading();
+    //renderLoading();
 
     axios
     .get(`https://api.github.com/users/${user}/repos`)
@@ -19,7 +21,6 @@ const getUser = function(name){
         fillList(response.data);
     })
     .catch(function(error){
-        alert("Usuário não encontrado.");
         renderError(error);
     });
 
@@ -29,33 +30,32 @@ const getUser = function(name){
         gitAvatar = response.data.avatar_url;
         gitBio = response.data.bio;
         console.log(gitAvatar);
-
-    })
-    .catch(function(error){
-        alert("Usuário não encontrado.");
-        renderError(error);
     });
-    
 }
 
 function renderError(loading) {
     dataList.innerHTML = "";
+    placeImg.innerHTML = "";
+    placeBio.innerHTML = "";
     var user = gitUser.value;
     var msgUserEmpty = !user ? "Preencha o usuário" : "Erro ao efetuar busca";
+    alert(msgUserEmpty);
 
   }
 
-function renderLoading(loading){
+/*function renderLoading(loading){
     dataList.innerHTML = "";
-    placeImg.innerHTML = "";
     const textelement = document.createTextNode('Carregando...');
     const listitem = document.createElement('li');
     listitem.appendChild(textelement);
     dataList.appendChild(listitem);
 
-}
+}*/
 
 const fillList = repositorios => {
+    dataList.innerHTML = "";
+    placeImg.innerHTML = "";
+    placeBio.innerHTML = "";
     console.log("Repositórios", repositorios);
     dataList.innerHTML = "Repositórios:";
 
